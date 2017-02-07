@@ -1,6 +1,4 @@
-   #!/usr/bin/python           # This is server.py file
-
-import socket               # Import socket module
+import socket 
 import thread
 
 clients = []
