@@ -24,15 +24,15 @@ def on_new_client(clientsocket,addr,index):
             print 'Client', index, '>>', msg
     clientsocket.close()
 
-s = socket.socket()         # Create a socket object
-port = 60000                # Reserve a port for your service.
+s = socket.socket()       
+port = 60000              
 print 'Server started!'
 print 'Waiting for clients...'
-s.bind(('', port))        # Bind to the port
-s.listen(5)                 # Now wait for client connection.
+s.bind(('', port))        
+s.listen(5)                
 
 while True:
-   c, addr = s.accept()     # Establish connection with client.
+   c, addr = s.accept()    
    clients.append(addr[1])
    thread.start_new_thread(on_new_client,(c,addr,len(clients)))
 s.close()
