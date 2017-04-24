@@ -14,7 +14,7 @@ s = socket.socket()
 host = socket.gethostname() 
 port = 60000                
 s.connect(("152.10.193.79", port))
-s.send("Hello server!")
+s.send(do_encrypt("Hello server!"))
 
 while True:
     testVar = raw_input("-> ")
